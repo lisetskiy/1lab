@@ -18,9 +18,9 @@ namespace _2
                 else
                 {
                     int a = n % 10;
-                    int b = (n % 10) % 10;
-                    int c = (n % 100) % 10;
-                    int d = (n % 1000) % 10;
+                    int b = (n / 10) % 10;
+                    int c = (n / 100) % 10;
+                    int d = (n / 1000);
                     int res = a * b * c * d;
                     Console.WriteLine("answer" + res);
 
