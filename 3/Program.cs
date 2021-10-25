@@ -17,7 +17,7 @@ namespace _3
             {
                 Console.Write("Minutes:");
                 int m = Convert.ToInt32(Console.ReadLine());
-                if (m > 60 || m < 1)
+                if (m > 60 || m < 0)
                 {
                     Console.WriteLine("Такой цифры нет на часах");
                 }
@@ -25,7 +25,7 @@ namespace _3
                 {
                     Console.Write("Seconds:");
                     int s = Convert.ToInt32(Console.ReadLine());
-                    if (s > 60 || s < 1)
+                    if (s > 60 || s < 0)
                     {
                         Console.WriteLine("Такой цифры нет на часах");
                     }
