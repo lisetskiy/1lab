@@ -9,7 +9,7 @@ namespace _3
             Console.WriteLine("3 задание");
             Console.Write("Hour:");
             int h = Convert.ToInt32(Console.ReadLine());
-            if (h > 12 || h < 1)
+            if (h > 12 || h < 0)
             {
                 Console.WriteLine("Такой цифры нет на часах");
             }
