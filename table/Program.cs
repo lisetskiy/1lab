@@ -1,57 +1,110 @@
-﻿using System;
+\ Console.WriteLine("Личное: Таблица");
 
-namespace table
+using System;
+using System.Collections;
+
+namespace Table
 {
-    class Program
+    public class OOP
     {
-        static void Main(string[] args)
+        public enum Type
         {
-            Console.WriteLine("Личное: Таблица");
+            А, И, Т
+        }
+        public class Item
+        {
+            public string show;
+            public string leader;
+            public int rating;
+            public Type type1;
 
-            Console.WriteLine("Введите данные первой строки");
-            Console.Write("Передача:");
-            string Show1 = Console.ReadLine();
-            Console.Write("Ведущий:");
-            string leader1 = Console.ReadLine();
-            Console.Write("Рейтинг:");
-            int rating1 = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Тип:");
-            string Type1 = Console.ReadLine();
+            public Item(string show, string leader, int rating, Type type1)
+            {
+                this.show = show;
+                this.leader = leader;
+                this.rating = rating;
+                this.type1 = type1;
+            }
 
-            Console.WriteLine("Введите данные второй строки");
-            Console.Write("Передача:");
-            string Show2 = Console.ReadLine();
-            Console.Write("Ведущий:");
-            string leader2 = Console.ReadLine();
-            Console.Write("Рейтинг:");
-            int rating2 = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Тип:");
-            string Type2 = Console.ReadLine();
+            public void Print()
+            {
+                Console.WriteLine($"|{this.show,-24}|{this.leader,-12}|{this.rating,-20}|{this.type1,-15}|");
+            }
+        }
 
-            Console.WriteLine("Введите данные третьей строки");
-            Console.Write("Передача:");
-            string Show3 = Console.ReadLine();
-            Console.Write("Ведущий:");
-            string leader3 = Console.ReadLine();
-            Console.Write("Рейтинг:");
-            int rating3 = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Тип:");
-            string Type3 = Console.ReadLine();
+        private static void Main()
+        {
+            ArrayList list = new();
+            bool flag = true;
+            while (flag)
+            {
+                Console.WriteLine("Передача:");
+                string show = Console.ReadLine();
 
-            Console.WriteLine("________________________________________________________________");
-            Console.WriteLine("|Телепередача                                                  |");
-            Console.WriteLine("________________________________________________________________");
-            Console.WriteLine("|Передача   |Ведущий        |               |                  |");
-            Console.WriteLine("________________________________________________________________");
-            Console.WriteLine("|" + Show1 + "|" + leader1 + "|" + rating1 + "|" + Type1 + "|");
-            Console.WriteLine("________________________________________________________________");
-            Console.WriteLine("|" + Show2 + "|" + leader2 + "|" + rating2 + "|" + Type2 + "|");
-            Console.WriteLine("________________________________________________________________");
-            Console.WriteLine("|" + Show3 + "|" + leader3 + "|" + rating3 + "|" + Type3 + "|");
-            Console.WriteLine("________________________________________________________________");
-            Console.WriteLine("|Перечисляемый тип: И - игровая; А - аналитическая; Т - ток-шоу|");
+                Console.WriteLine("Ведущий");
+                string leader = Console.ReadLine();
 
-            Console.ReadKey();
+                Console.WriteLine("Рейтинг:");
+                int rating = Convert.ToInt32(Console.ReadLine());
+
+                Type type1;
+                while (true)
+                {
+                    Console.WriteLine("Тип(А,И,Т):");
+                    string tmp = Console.ReadLine();
+                    if (tmp == "А" || tmp == "A")
+                    {
+                        type1 = Type.А;
+                        break;
+                    }
+                    else if (tmp == "И" || tmp == "B")
+                    {
+                        type1 = Type.И;
+                        break;
+                    }
+                    else if (tmp == "Т" || tmp == "Т")
+                    {
+                        type1 = Type.Т;
+                        break;
+                    }
+                    else Console.WriteLine("Введите еще раз.");
+
+                }
+
+                Item value = new(show, leader, rating, type1);
+                list.Add(value);
+                while (true)
+                {
+                    Console.WriteLine("Добавить элементы в таблицу?\nда - продолжить\nнет - вывод таблицы");
+                    string input = Console.ReadLine();
+                    if (input == "да" || input == "нет")
+                    {
+                        if (input == "нет")
+                        {
+                           flag = false;
+                           break;
+                        }
+                        break;
+                    } 
+                    else Console.WriteLine("Ошибка ввода. Попробуйте еще раз.");
+                }
+
+                
+            }
+            Console.WriteLine(new String('-', 76));
+            Console.WriteLine($"{"|Телепередача",-75}|");
+            Console.WriteLine(new String('-', 76));
+            Console.WriteLine($"{"|Передача",-25}|{"Ведущий",-12}|{"Рейтинг",-20}|{"Тип",-15}|");
+            Console.WriteLine(new String('-', 76));
+            foreach (Item item in list)
+            {
+                item.Print();
+                Console.WriteLine(new String('-', 76));
+            }
+            Console.WriteLine($"{"|Перечисляемый тип: И - игровая; А - аналитическая; Т - ток-шоу",-75}|");
+            Console.WriteLine(new String('-', 76));
+
+
         }
     }
 }
