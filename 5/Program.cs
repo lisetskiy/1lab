@@ -19,8 +19,8 @@
                 {
                     S = (a * b) / 2;
                     Console.WriteLine("S =" + S);
-                    P0 = Math.Sqrt(Math.Pow(a, 2) + Math.Pow(b, 2));
-                    P = (int)(a + b + P0);
+                    c = Math.Sqrt(Math.Pow(a, 2) + Math.Pow(b, 2));
+                    P = (int)(a + b + c);
 
                     Console.WriteLine("P =" + P);
                     break;
