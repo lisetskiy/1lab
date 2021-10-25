@@ -19,8 +19,6 @@ namespace _7
                 }
                 else
                 {
-
-                }
                 int a = (n / 100);
                 int b = (n / 10) % 10;
                 int c = (n % 10);
@@ -30,6 +28,8 @@ namespace _7
                 (a, b, c) = (c, b, a);
                 Console.WriteLine($"reversed : {a}{b}{c}");
                 break;
+                }
+               
             }
             
             Console.ReadKey();
