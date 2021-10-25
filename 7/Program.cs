@@ -6,17 +6,18 @@ namespace _7
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("7 задание");
-            int a;
-            int b;
-            int c;
-            var m = new int[3];
-            m[0] = a = 3;
-            m[1] = b = 6;
-            m[2] = c = 2;
+             Console.WriteLine("7 задание");
+            
+            Console.WriteLine("Введите трехзначное число");
+            int n = Convert.ToInt32(Console.ReadLine());
+
+            int a = (n / 100);
+            int b = (n / 10) % 10;
+            int c = (n % 10);
+
+
             Console.WriteLine($"Число :{a}{b}{c}");
-            (int c, int b, int a) p = (c, b, a);
-            (a, b, c) = p;
+            (a, b, c) = (c, b, a);
             Console.WriteLine($"reversed : {a}{b}{c}");
             Console.ReadKey();
         }
