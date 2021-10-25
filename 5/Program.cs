@@ -2,7 +2,7 @@
             int a;
             int b;
             int S;
-            double P0;
+            double c;
             int P;
             Console.Write("Введите a:");
             a = Convert.ToInt32(Console.ReadLine());
