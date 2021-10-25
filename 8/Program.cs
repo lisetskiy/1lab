@@ -10,7 +10,7 @@ namespace _8
             Console.Write("x :");
             int x = Convert.ToInt32(Console.ReadLine());
             int res;
-            res = 3 * x ^ 4 - 5 * x ^ 3 + 2 * x ^ 2 - x + 7;
+            res = (((3 * x -5)*x+2)*x-1)*x+7;
             Console.WriteLine("res =" + res);
             Console.ReadKey();
         }
