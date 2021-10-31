@@ -20,7 +20,7 @@ namespace _1_example
             Console.Write("t=");
             t = Convert.ToInt32(Console.ReadLine());
 
-            y = Math.Pow(e,-b * t) * Math.Sin(s) * (a * t + b) - (Math.Sqrt(Math.Abs(b * t + a))); // Пример из задания
+            y = e * Math.Pow(-b, t) * Math.Sin(s) * (a * t + b) - (Math.Sqrt(Math.Abs(b * t + a))); // Пример из задания
 
             Console.WriteLine("y=" + y);
             Console.ReadKey();

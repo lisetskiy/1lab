@@ -1,34 +1,27 @@
-namespace _2
-{    class Program
+﻿using System;
+
+namespace _6
+{
+    class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Введите четырехзначное число");
-            
-            Console.WriteLine("Число");
-            int n = Convert.ToInt32(Console.ReadLine());
-            
-            while (true)
-            {
-                if(n > 9999 | n< 1000)
-                {
-                    Console.WriteLine("Введите четырехзначное число");
-                    break;
-                }
-                else
-                {
-                    int a = n % 10;
-                    int b = (n / 10) % 10;
-                    int c = (n / 100) % 10;
-                    int d = (n / 1000);
-                    int res = a * b * c * d;
-                    Console.WriteLine("answer" + res);
-
-                    break;
-                }
-            }
-          
+            Console.WriteLine("6 задание");
+            Console.WriteLine("Введите строго четырех значное число");
+            Console.WriteLine("Введите число:");
+            int a;
+            int b;
+            int c;
+            int d;
+            int res;
+            var m = new int[4];
+            m[0] = a = 1;
+            m[1] = b = 2;
+            m[2] = c = 3;
+            m[3] = d = 4;
+            res = a * b * c * d;
+            Console.WriteLine("res:" + res);
             Console.ReadKey();
         }
-    }   
+    }
 }
